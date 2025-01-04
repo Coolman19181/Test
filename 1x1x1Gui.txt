@@ -376,7 +376,8 @@ e2006Theme.TextScaled = true
 e2006Theme.TextSize = 14.000
 e2006Theme.TextWrapped = true
 e2006Theme.MouseButton1Down:connect(function()
-print("no")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolman19181/Meflflflfyyyy/refs/heads/main/meflly%20gui%20(1).txt", true))()
+
 end)
 ForceField.Name = "ForceField"
 ForceField.Parent = Frame
