@@ -150,7 +150,6 @@ e1x1x1x1Music.TextWrapped = true
 e1x1x1x1Music.MouseButton1Down:connect(function()
 game.Players:Chat(">particle me 127476787 :particle me 127476787 ;particle me 127476787")
 end)
-end)
 e1x1x1x1Laugh.Name = "e1x1x1x1Laugh"
 e1x1x1x1Laugh.Parent = Frame
 e1x1x1x1Laugh.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
@@ -163,41 +162,7 @@ e1x1x1x1Laugh.TextScaled = true
 e1x1x1x1Laugh.TextSize = 14.000
 e1x1x1x1Laugh.TextWrapped = true
 e1x1x1x1Laugh.MouseButton1Down:connect(function()
-local _0x1a2b=game.Players
-local _0x3c4d=">hat me 13162640444"
-_0x1a2b:Chat(_0x3c4d)
-
-local tool = Instance.new("Tool")
-tool.Name = "activate"
-tool.RequiresHandle = true
-
-local handle = Instance.new("Part")
-handle.Size = Vector3.new(0.01, 0.01, 0.01)
-handle.BrickColor = BrickColor.new("Bright blue")
-handle.Anchored = false
-handle.CanCollide = false
-handle.Name = "Handle"
-handle.Parent = tool
-
-tool.Parent = game.Players.LocalPlayer.Backpack
-
-local function onActivated()
-local plr = game.Players.LocalPlayer
-
-task.spawn(function()
-    task.wait(0.4)
-    workspace.muffy.Humanoid.Health = 0
-end)
-
-while plr.Character.Humanoid.Health > 10 do
-    task.wait(0.1)
-    workspace.muffy.Torso.CFrame = plr.Character.Head.CFrame
-end
-    handle.BrickColor = BrickColor.random()
-end
-
-tool.Activated:Connect(onActivated)
-
+print("jigganigga")
 end)
 DayToNight.Name = "DayToNight"
 DayToNight.Parent = Frame
