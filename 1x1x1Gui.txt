@@ -76,8 +76,7 @@ train.Anchored = false
 local TrainMesh = Instance.new("SpecialMesh",train)
 TrainMesh.MeshType = Enum.MeshType.FileMesh
 TrainMesh.Scale = Vector3.new(0.020,0.020,0.015)
-TrainMesh.MeshId = "rbxassetid://miakhalfia"
-TrainMesh.TextureId = "rbxassetid://431017809"
+
 
 local weld2 = Instance.new("Weld",p.Torso)
 weld2.Part0 = p.Torso
