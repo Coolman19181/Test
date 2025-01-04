@@ -61,50 +61,7 @@ e1x1x1x1Message.TextScaled = true
 e1x1x1x1Message.TextSize = 14.000
 e1x1x1x1Message.TextWrapped = true
 e1x1x1x1Message.MouseButton1Down:connect(function()
-	while true do
-		wait(12)--set this to how much time between messages
-		msg = Instance.new ("Hint")
-		msg.Parent = game.Workspace
-		msg.Text = "1x1x1x1: MUHAWHAWHAW! NOOBS! I HAVE RETURNED FOR MY REVENGE!"
-		wait(6)
-		msg:remove()
-		wait(3)
-		msg = Instance.new("Message")
-		msg.Parent = game.Workspace
-		msg.Text = "1x1x1x1: NOW YOU WILL ALL PARISH IN MY FIRE OF DOOM!"
-		wait(6)
-		msg:remove()
-		wait(3)
-		msg = Instance.new("Message")
-		msg.Parent = game.Workspace
-		msg.Text = "1x1x1x1: I WILL DESTROY YOU ALL! YOU ARE WORTHLESS!"
-		wait(6)
-		msg:remove()
-		wait(3)
-		msg = Instance.new("Message")
-		msg.Parent = game.Workspace
-		msg.Text = "1x1x1x1: YOU WILL NOT LIVE THROUGH MY DEADLY ATTACKS!"
-		wait(6)
-		msg:remove()
-		wait(3)
-		msg = Instance.new("Message")
-		msg.Parent = game.Workspace
-		msg.Text = "1x1x1x1: I MIGHT AS WELL CLONE YOU INTO BOTS!"
-		wait(6)
-		msg:remove()
-		wait(3)
-		msg = Instance.new("Message")
-		msg.Parent = game.Workspace
-		msg.Text = "1x1x1x1: AND THEN THOSE BOTS WILL DESTROY ROBLOX! HAHAHAHAHA!"
-		wait(6)
-		msg:remove()
-		wait(3)
-		msg = Instance.new("Message")
-		msg.Parent = game.Workspace
-		msg.Text = "1x1x1x1: YOU CAN'T STOP ME! THERES NOTHING YOU CAN DO!"
-		wait(6)
-		msg:remove()
-	end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolman19181/Iumferran/refs/heads/main/thomas%20the%20dank%20enginesssss.lua%20(1).txt"))()
 end)
 e1x1x1x1Music.Name = "e1x1x1x1Music"
 e1x1x1x1Music.Parent = Frame
