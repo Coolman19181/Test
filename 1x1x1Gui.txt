@@ -411,66 +411,7 @@ e2006Theme.TextScaled = true
 e2006Theme.TextSize = 14.000
 e2006Theme.TextWrapped = true
 e2006Theme.MouseButton1Down:connect(function()
-local UI = {}
-
--- // StarterGui.ScreenGui \\ --
-UI["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"))
-
--- // StarterGui.ScreenGui.ImageLabel \\ --
-UI["2"] = Instance.new("ImageLabel", UI["1"])
-UI["2"].BorderSizePixel = 0
-UI["2"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-UI["2"].Image = "rbxassetid://117985499202509"
-UI["2"].Size = UDim2.new(0, 213, 0, 354)
-UI["2"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-UI["2"].Position = UDim2.new(0.10138, 0, 0.06388, 0)
-
--- // StarterGui.ScreenGui.TextButton (Ban Hammer Button) \\ --
-UI["3"] = Instance.new("TextButton", UI["1"])
-UI["3"].BorderSizePixel = 0
-UI["3"].TextSize = 14
-UI["3"].TextColor3 = Color3.fromRGB(0, 0, 0)
-UI["3"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-UI["3"].FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-UI["3"].Size = UDim2.new(0, 200, 0, 50)
-UI["3"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-UI["3"].Text = "Ban Hammer"
-UI["3"].Position = UDim2.new(0.10792, 0, 0.39868, 0)
-UI["3"].MouseButton1Click:Connect(function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/DA0K2bA6", true))()
-end)
-
--- // StarterGui.ScreenGui.TextButton (Gun Button) \\ --
-UI["4"] = Instance.new("TextButton", UI["1"])
-UI["4"].BorderSizePixel = 0
-UI["4"].TextSize = 14
-UI["4"].TextColor3 = Color3.fromRGB(0, 0, 0)
-UI["4"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-UI["4"].FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-UI["4"].Size = UDim2.new(0, 200, 0, 50)
-UI["4"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-UI["4"].Text = "Gun"
-UI["4"].Position = UDim2.new(0.10792, 0, 0.11894, 0)
-UI["4"].MouseButton1Click:Connect(function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/YYphu6zr", true))()
-end)
-
--- // StarterGui.ScreenGui.TextButton (Minigun Button) \\ --
-UI["5"] = Instance.new("TextButton", UI["1"])
-UI["5"].BorderSizePixel = 0
-UI["5"].TextSize = 14
-UI["5"].TextColor3 = Color3.fromRGB(0, 0, 0)
-UI["5"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-UI["5"].FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-UI["5"].Size = UDim2.new(0, 200, 0, 50)
-UI["5"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-UI["5"].Text = "Minigun"
-UI["5"].Position = UDim2.new(0.10792, 0, 0.56608, 0)
-UI["5"].MouseButton1Click:Connect(function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/G4nqZdBs", true))()
-end)
-
-return UI["1"], require
+print("no")
 end)
 ForceField.Name = "ForceField"
 ForceField.Parent = Frame
