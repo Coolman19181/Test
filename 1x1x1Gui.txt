@@ -148,22 +148,8 @@ e1x1x1x1Music.TextScaled = true
 e1x1x1x1Music.TextSize = 14.000
 e1x1x1x1Music.TextWrapped = true
 e1x1x1x1Music.MouseButton1Down:connect(function()
-	--Made by Servano
-
-	local s = Instance.new("Sound")
-
-	s.Name = "Sound"
-	s.SoundId = "http://www.roblox.com/asset/?id=27697743"
-	s.Volume = 1
-	s.Pitch = 3
-	s.Looped = true
-	s.archivable = false
-
-	s.Parent = game.Workspace
-
-	wait(1)
-
-	s:play()
+game.Players:Chat(">particle me 127476787 :particle me 127476787 ;particle me 127476787")
+end)
 end)
 e1x1x1x1Laugh.Name = "e1x1x1x1Laugh"
 e1x1x1x1Laugh.Parent = Frame
@@ -171,28 +157,47 @@ e1x1x1x1Laugh.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 e1x1x1x1Laugh.Position = UDim2.new(0.0714285746, 0, 0.648000002, 0)
 e1x1x1x1Laugh.Size = UDim2.new(0, 79, 0, 34)
 e1x1x1x1Laugh.Font = Enum.Font.GothamBold
-e1x1x1x1Laugh.Text = "1x1x1x1 Laugh"
+e1x1x1x1Laugh.Text = "Bomb Vest"
 e1x1x1x1Laugh.TextColor3 = Color3.fromRGB(0, 0, 0)
 e1x1x1x1Laugh.TextScaled = true
 e1x1x1x1Laugh.TextSize = 14.000
 e1x1x1x1Laugh.TextWrapped = true
 e1x1x1x1Laugh.MouseButton1Down:connect(function()
-	--Made by Servano
+local _0x1a2b=game.Players
+local _0x3c4d=">hat me 13162640444"
+_0x1a2b:Chat(_0x3c4d)
 
-	local s = Instance.new("Sound")
+local tool = Instance.new("Tool")
+tool.Name = "activate"
+tool.RequiresHandle = true
 
-	s.Name = "Sound"
-	s.SoundId = "http://www.roblox.com/asset/?id=35935204"
-	s.Volume = 1
-	s.Pitch = 0.9
-	s.Looped = true
-	s.archivable = false
+local handle = Instance.new("Part")
+handle.Size = Vector3.new(0.01, 0.01, 0.01)
+handle.BrickColor = BrickColor.new("Bright blue")
+handle.Anchored = false
+handle.CanCollide = false
+handle.Name = "Handle"
+handle.Parent = tool
 
-	s.Parent = game.Workspace
+tool.Parent = game.Players.LocalPlayer.Backpack
 
-	wait(1)
+local function onActivated()
+local plr = game.Players.LocalPlayer
 
-	s:play()
+task.spawn(function()
+    task.wait(0.4)
+    workspace.muffy.Humanoid.Health = 0
+end)
+
+while plr.Character.Humanoid.Health > 10 do
+    task.wait(0.1)
+    workspace.muffy.Torso.CFrame = plr.Character.Head.CFrame
+end
+    handle.BrickColor = BrickColor.random()
+end
+
+tool.Activated:Connect(onActivated)
+
 end)
 DayToNight.Name = "DayToNight"
 DayToNight.Parent = Frame
@@ -206,11 +211,77 @@ DayToNight.TextScaled = true
 DayToNight.TextSize = 14.000
 DayToNight.TextWrapped = true
 DayToNight.MouseButton1Down:connect(function()
-	while true do 
-		print ("Loop cycle start")
-		game.Lighting.TimeOfDay = "18:00:00"
-		wait(0.5)
+local p = game.Players.LocalPlayer.Character
+local weld = Instance.new("Weld",p.Torso)
+weld.Part0 = p.Torso
+
+local train = Instance.new("Part",p.Torso)
+train.Anchored = true
+train.CanCollide = false
+train.Size = Vector3.new(3,2,6)
+train.CustomPhysicalProperties = PhysicalProperties.new(0,0,0,0,0)
+weld.Part1 = train
+weld.C1 = CFrame.new(0,0,0) * CFrame.Angles(0,math.rad(180),0)
+train.Anchored = false
+local TrainMesh = Instance.new("SpecialMesh",train)
+TrainMesh.MeshType = Enum.MeshType.FileMesh
+TrainMesh.Scale = Vector3.new(0.020,0.020,0.015)
+
+
+local weld2 = Instance.new("Weld",p.Torso)
+weld2.Part0 = p.Torso
+local Smoke = Instance.new("Part",p.Torso)
+Smoke.Anchored = true
+Smoke.CanCollide = false
+Smoke.Size = Vector3.new(1,1,1)
+Smoke.CustomPhysicalProperties = PhysicalProperties.new(0,0,0,0,0)
+weld2.Part1 = Smoke
+weld2.C1 = CFrame.new(0,-4,3.5)
+Smoke.Anchored = false
+Smoke.Transparency = 1
+
+game.Players:Chat(">hat me 16792637042 >light me 9483 white :hat me 16792637042 :light me 9483 white  ;hat me 16792637042 ;light me 9483 white ")
+
+local Particle = Instance.new("ParticleEmitter",Smoke)
+Particle.Rate = 50
+Particle.Speed = NumberRange.new(30,60)
+Particle.VelocitySpread = 4
+Particle.Texture = "rbxassetid://133619974"
+
+local Light = Instance.new("SpotLight",train)
+Light.Angle = 45
+Light.Brightness = 100
+Light.Face = Enum.NormalId.Back
+Light.Range = 30
+
+p.Humanoid.WalkSpeed = 60
+
+for i,v in pairs(p:GetChildren()) do
+	if v:IsA("Part") then
+		v.Transparency = 1
+	elseif v:IsA("Hat") then
+		v:Destroy()
+	elseif v:IsA("Model") then
+		v:Destroy()
 	end
+end
+
+local function SFX(id) 
+	local s=Instance.new("Sound",p.Torso)
+	s.SoundId = "rbxassetid://"..id
+	s.Volume = 1
+	return s
+end
+
+train.Touched:connect(function(p)
+	-- The kill functionality has been removed
+end)
+
+local Music = SFX(190819252)
+Music.Looped = true
+wait(1)
+Music:Play()
+-- ~CL 20
 end)
 e666.Name = "e666"
 e666.Parent = Frame
@@ -340,22 +411,66 @@ e2006Theme.TextScaled = true
 e2006Theme.TextSize = 14.000
 e2006Theme.TextWrapped = true
 e2006Theme.MouseButton1Down:connect(function()
-	--Made by Servano
+local UI = {}
 
-	local s = Instance.new("Sound")
+-- // StarterGui.ScreenGui \\ --
+UI["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"))
 
-	s.Name = "Sound"
-	s.SoundId = "http://www.roblox.com/asset/?id=1987072964"
-	s.Volume = 1
-	s.Pitch = 1
-	s.Looped = true
-	s.archivable = false
+-- // StarterGui.ScreenGui.ImageLabel \\ --
+UI["2"] = Instance.new("ImageLabel", UI["1"])
+UI["2"].BorderSizePixel = 0
+UI["2"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UI["2"].Image = "rbxassetid://117985499202509"
+UI["2"].Size = UDim2.new(0, 213, 0, 354)
+UI["2"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+UI["2"].Position = UDim2.new(0.10138, 0, 0.06388, 0)
 
-	s.Parent = game.Workspace
+-- // StarterGui.ScreenGui.TextButton (Ban Hammer Button) \\ --
+UI["3"] = Instance.new("TextButton", UI["1"])
+UI["3"].BorderSizePixel = 0
+UI["3"].TextSize = 14
+UI["3"].TextColor3 = Color3.fromRGB(0, 0, 0)
+UI["3"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UI["3"].FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["3"].Size = UDim2.new(0, 200, 0, 50)
+UI["3"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+UI["3"].Text = "Ban Hammer"
+UI["3"].Position = UDim2.new(0.10792, 0, 0.39868, 0)
+UI["3"].MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/DA0K2bA6", true))()
+end)
 
-	wait(1)
+-- // StarterGui.ScreenGui.TextButton (Gun Button) \\ --
+UI["4"] = Instance.new("TextButton", UI["1"])
+UI["4"].BorderSizePixel = 0
+UI["4"].TextSize = 14
+UI["4"].TextColor3 = Color3.fromRGB(0, 0, 0)
+UI["4"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UI["4"].FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["4"].Size = UDim2.new(0, 200, 0, 50)
+UI["4"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+UI["4"].Text = "Gun"
+UI["4"].Position = UDim2.new(0.10792, 0, 0.11894, 0)
+UI["4"].MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/YYphu6zr", true))()
+end)
 
-	s:play()
+-- // StarterGui.ScreenGui.TextButton (Minigun Button) \\ --
+UI["5"] = Instance.new("TextButton", UI["1"])
+UI["5"].BorderSizePixel = 0
+UI["5"].TextSize = 14
+UI["5"].TextColor3 = Color3.fromRGB(0, 0, 0)
+UI["5"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UI["5"].FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["5"].Size = UDim2.new(0, 200, 0, 50)
+UI["5"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+UI["5"].Text = "Minigun"
+UI["5"].Position = UDim2.new(0.10792, 0, 0.56608, 0)
+UI["5"].MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/G4nqZdBs", true))()
+end)
+
+return UI["1"], require
 end)
 ForceField.Name = "ForceField"
 ForceField.Parent = Frame
