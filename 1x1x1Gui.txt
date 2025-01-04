@@ -319,12 +319,97 @@ Disc0.TextScaled = true
 Disc0.TextSize = 14.000
 Disc0.TextWrapped = true
 Disc0.MouseButton1Down:connect(function()
-	while true do
+--[[ sigma ]]
+game.Players.LocalPlayer.Character.Animate.Enabled = false
 
-		game.Lighting.Ambient = Color3.new(math.random(), math.random(), math.random())
-		wait(.25)
+-- Stop any playing animations
+function stopanims()
+    for _, v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do
+        v:Stop()
+    end
+end
 
-	end
+stopanims()
+
+local e2e
+local e3e
+
+-- Function to play animation
+function playanim(animid, timeposition, weight, speed, sigma)
+    local anim = Instance.new("Animation")
+    anim.AnimationId = "rbxassetid://"..tostring(animid)
+    local anim2 = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
+    anim2:Play()
+    anim2.TimePosition = timeposition
+    anim2:AdjustWeight(weight)
+    anim2:AdjustSpeed(speed)
+    anim2.Looped = true
+    if sigma == "yes" then
+        e2e = anim2
+    elseif sigma == "walk" then
+        e3e = anim2
+    end
+end
+
+playanim(
+    188856222, -- animid
+    0, -- timeposition
+    1, -- weight
+    0.5 -- speed
+)
+
+game.Players:Chat(">hat me 18334257663 white 347 neon :hat me 18334257663 white 347 neon ;hat me 18334257663 white 347 neon")
+
+playanim(
+    161235826, -- animid
+    0.25, -- timeposition
+    0.5, -- weight
+    1, -- speed
+    "yes" -- for other stuff
+)
+
+playanim(
+    233322916, -- animid
+    0, -- timeposition
+    0.25, -- weight
+    0, -- speed
+    "walk" -- for other stuff
+)
+
+--stopping the stuff cuz sigma boi!1!!!!!?!??!?!
+if e3e then
+    e3e:Stop()
+end
+
+
+
+game:GetService("RunService").Heartbeat:Connect(function(dt)
+    local character = game.Players.LocalPlayer.Character
+    if character and character:FindFirstChild("Humanoid") then
+        local humanoid = character.Humanoid
+
+        
+
+     
+        if humanoid.MoveDirection.Magnitude > 0.5 then
+            if e3e and not e3e.IsPlaying then
+                e3e:Play()
+                e3e:AdjustWeight(0.30)
+                e3e.Looped = true
+            end
+        else
+            if e3e and e3e.IsPlaying then
+                e3e:Stop()
+            end
+        end
+
+     
+        if e2e then
+            if e2e.TimePosition >= 0.3 then
+                e2e:AdjustSpeed(-0.05)
+            elseif e2e.TimePosition <= 0.175 then
+                e2e:AdjustSpeed(0.05)
+            
 end)
 e2006Theme.Name = "e2006Theme"
 e2006Theme.Parent = Frame
